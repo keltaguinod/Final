@@ -1,0 +1,138 @@
+/* personalinfo.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary: #501b34;
+  --secondary: #501b34;
+  --text-dark: #1e2a3a;
+  --text-light: #6d7b8a;
+  --bg: #f4f6f9;
+  --card-bg: #501b34;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  padding: 30px 20px;
+}
+
+/* Make all sidebar text white */
+.sidebar,
+.sidebar * {
+  color: white !important;
+}
+
+.profile-pic {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-pic i {
+  font-size: 64px;
+  color: var(--primary);
+}
+
+.profile-pic h3 {
+  margin: 10px 0 5px;
+}
+
+.profile-pic p {
+  font-size: 14px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar nav ul li.active,
+.sidebar nav ul li:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.main-content h2 {
+  margin-bottom: 5px;
+}
+
+.main-content p {
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.info-box {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  color: white; /* Make content inside info box white too */
+}
+
+.info-box label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.info-box i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.info-box.full {
+  grid-column: span 2;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .info-box.full {
+    grid-column: span 1;
+  }
+}
